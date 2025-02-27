@@ -1,0 +1,278 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SINEPUB - Sindicato del HUV</title>
+        <link rel="stylesheet" href="styles.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@huggingface/inference"></script>
+        <script src="https://unpkg.com/react@17.0.2/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+    </head>
+    <body>
+        <!-- Encabezado Principal (Franja azul delgada con títulos) -->
+        <header>
+            <div class="container header-titles-container"> <!-- Nuevo contenedor para los títulos -->
+                <nav class="header-titles-nav"> <!-- Nueva navegación para los títulos -->
+                    <ul>
+                        <li><a href="historia.html" id="historia-link">Historia</a></li>
+                        <li><a href="Estatutos.pdf">Estatutos</a></li>
+                        <li><a href="juntadi.html">Junta Directiva</a></li>
+                        <li><a href="logros.html">Logros</a></li>
+                        <li class="menu-item-redes-sociales">  <!-- Añadimos una clase al LI -->
+                            <div class="dropdown-container-redes-sociales"> <!-- NUEVO DIV CONTENEDOR -->
+                                <a href="#" class="dropdown-toggle">Redes Sociales</a>
+                                <div class="dropdown-menu dropdown-menu-redes-sociales">
+                                    <h2>Redes Sociales</h2>
+                                    <p>Síguenos en nuestras redes sociales para estar al día con las últimas noticias y novedades del sindicato:</p>
+                                    <div class="redes-sociales-header">
+                                        <a href="https://www.facebook.com/people/Sindicato-de-Empleados-P%25C3%25BAblicos-Sinepub-HUV/100064330442393/" target="_blank">
+                                            <img src="images/icono.facebook.jpg" alt="Facebook">
+                                        </a>
+                                        <a href="https://web.whatsapp.com/send/?phone=%2B573163218579&context=ARA_Q_pzjXz8Xc1JNzpw6upSuHE9w825NQlneatdpHwu0FO26cq6ivICcbMORKR3pT_4HzmNl_Aky2IRu_neaai7HKXVwhT1CacJzpFOFANuNKjQwbhTfwQdfhk1G2rnGTY71RB49Bl3Z1bkuaivHvfxoQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawH62IxleHRuA2FlbQIxMAABHaz7Q3eybwVxMxtEi601LIJaVaPH6ttX5OI1SOxoXrV8GD8D5at1P_aksg_aem_fRKBzcZnA3IH1JogroXN_g" target="_blank">
+                                            <img src="images/icono.whatsapp.png" alt="WhatsApp">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Imágenes del Encabezado (Debajo de la franja azul) -->
+        <section class="header-logos">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="SINEPUB Logo" class="logo-sinepub">
+                <img src="images/HUV.jpg" alt="Logo HUV" class="logo-huv">
+            </div>
+        </section>
+
+        <!-- Navegación Secundaria (Inicio, Noticias, Afiliación - controla el slider) -->
+        <section class="below-header-nav">
+            <div class="container below-header-nav-container">
+                <nav class="slider-nav">  <!-- Nueva clase slider-nav para JS -->
+                    <ul>
+                        <li><a href="#" data-slide="1" class="active">Inicio</a></li>  <!-- data-slide y clase active -->
+                        <li><a href="#" data-slide="2">Noticias</a></li>   <!-- data-slide -->
+                        <li><a href="#" data-slide="6">Afiliación</a></li>  <!-- data-slide -->
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Slider de imágenes -->
+        <section id="inicio">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active"  id="slide-1">
+                        <div class="imagen-y-texto">
+                            <img src="images/fotoportada.jpg" alt="Banner 1" class="imagen-banner">
+                            <div class="texto-banner">
+                                <h1>Bienvenidos a SINEPUB HUV</h1>
+                                <p>En el corazón de nuestra labor sindical yace el compromiso inquebrantable con la justicia, la equidad y el bienestar de todos los trabajadores del Hospital Universitario del Valle. En SINEPUB HUV, creemos firmemente que el trabajo digno y justo es la piedra angular del desarrollo personal y colectivo, razón por la cual luchamos día a día para defender los derechos de nuestros afiliados.</p>
+                                
+                                <p>Somos más que un sindicato: somos una familia que protege, apoya y motiva a sus integrantes a alcanzar mejores condiciones laborales y una vida más plena. Nuestra organización está guiada por principios de solidaridad, honestidad y transparencia, asegurando que cada voz sea escuchada y cada necesidad sea atendida con el respeto y la seriedad que merece.</p>
+                                
+                                <div class="mision-vision">
+                                    <div class="mision">
+                                        <h3>Misión</h3>
+                                        <p>Brindar un respaldo sólido e inquebrantable a nuestros afiliados, luchando incansablemente por condiciones laborales justas, equitativas y dignas. Nos esforzamos por garantizar un entorno laboral donde se respeten los derechos fundamentales y se fomenten oportunidades de crecimiento y bienestar integral.</p>
+                                    </div>
+                                    <div class="vision">
+                                        <h3>Visión</h3>
+                                        <p>Para el año 2030, aspiramos a consolidarnos como la organización sindical líder en Colombia, un referente en la defensa y promoción de los derechos de los trabajadores del sector salud. Visualizamos un futuro donde nuestros afiliados cuenten con seguridad laboral, condiciones justas y un ambiente de trabajo óptimo para su desarrollo profesional y personal.</p>
+                                    </div>
+                                </div>
+                                
+                                <p>El poder del cambio reside en la unidad, y en SINEPUB HUV trabajamos con el firme propósito de construir una comunidad sindical fuerte y unida, capaz de transformar la realidad de los trabajadores. Nuestro compromiso va más allá de lo contractual; buscamos el bienestar integral de cada afiliado, promoviendo el respeto, la equidad y la justicia en cada una de nuestras acciones.</p>
+                                
+                                <p>¡Únete a nosotros y forma parte de una organización que lucha por ti, que te escucha y que jamás dejará de trabajar para construir un futuro mejor para todos!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-2">  <!-- Slide de Noticias 1 -->
+                        <div class="imagen-y-texto">
+                            <img src="images/imagen2.jpg" alt="Banner 2" class="imagen-banner">
+                            <div class="texto-banner">
+                                <h3>Noticias 1</h3> <p>Contenido de la noticia 1...</p>
+                            </div>                            
+                        </div>
+                    </div>    
+                    <div class="slide" id="slide-3">  <!-- Slide de Noticias 2 -->
+                        <div class="imagen-y-texto">
+                            <img src="images/imagen2.jpg" alt="Banner 3" class="imagen-banner">
+                            <div class="texto-banner">
+                                <h3>Noticias 2</h3> <p>Contenido de la noticia 2...</p>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-4">  <!-- Slide de Noticias 3 -->
+                        <div class="imagen-y-texto">
+                            <img src="images/imagen2.jpg" alt="Banner 4" class="imagen-banner">
+                            <div class="texto-banner">
+                                <h3>Noticias 3</h3> <p>Contenido de la noticia 3...</p>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-5">  <!-- Slide de Noticias 4 -->
+                        <div class="imagen-y-texto">
+                            <img src="images/imagen2.jpg" alt="Banner 5" class="imagen-banner">
+                            <div class="texto-banner">
+                                <h3>Noticias 4</h3> <p>Contenido de la noticia 4...</p>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="slide" id="slide-6">  <!-- NUEVA SLIDE para Afiliación -->
+                        <div class="imagen-y-texto">
+                            <img src="images/afiliacion_banner.jpg" alt="Banner Afiliacion" class="imagen-banner">
+                            <div class="texto-banner formulario-afiliacion">  <!-- Añadida clase formulario-afiliacion -->
+                                <h1>Formulario de Afiliación</h1>
+                                <p>Únete a SINEPUB HUV y comienza a disfrutar de los beneficios de ser parte de nuestra comunidad sindical. Completa el siguiente formulario para iniciar tu proceso de afiliación:</p>
+                            
+                                <form id="formulario-afiliacion">  <!-- Formulario principal -->
+                                    <fieldset class="fieldset-datos-personales">  <!-- Fieldset para "Datos personales y laborales" -->
+                                        <legend>Datos Personales y Laborales</legend>
+                                        <div class="form-row">
+                                            <label for="nombre_apellidos">Nombre (s) y Apellidos (s):</label>
+                                            <input type="text" id="nombre_apellidos" name="nombre_apellidos" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="numero_identificacion">Número de Identificación:</label>
+                                            <input type="text" id="numero_identificacion" name="numero_identificacion" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="profesion_oficio">Profesión u Oficio:</label>
+                                            <input type="text" id="profesion_oficio" name="profesion_oficio">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="telefono">Teléfono(s):</label>
+                                            <input type="tel" id="telefono" name="telefono">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="correo_electronico">Correo Electrónico:</label>
+                                            <input type="email" id="correo_electronico" name="correo_electronico" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="direccion_correspondencia">Dirección de Correspondencia:</label>
+                                            <input type="text" id="direccion_correspondencia" name="direccion_correspondencia">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="departamento_municipio">Departamento y Municipio de Residencia:</label>
+                                            <input type="text" id="departamento_municipio" name="departamento_municipio">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="area_institucion">Área de la Institución:</label>
+                                            <input type="text" id="area_institucion" name="area_institucion">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="empleo">Empleo (Denominación, Código y Grado):</label>
+                                            <input type="text" id="empleo" name="empleo">
+                                        </div>
+                                        <div class="form-row">
+                                            <label for="fecha_afiliacion">Fecha de Afiliación al Sindicato:</label>
+                                            <input type="date" id="fecha_afiliacion" name="fecha_afiliacion">
+                                        </div>
+                                    </fieldset>
+                            
+                                    <fieldset class="fieldset-autorizacion-descuento">  <!-- Fieldset para "Autorización de descuento..." -->
+                                        <legend>Autorización de Descuento de Cuota Sindical ante el Nominador</legend>
+                                        <p>Yo, <input type="text" class="input-inline" id="yo_nombre" name="yo_nombre" placeholder="Nombre completo">, identificado(a) con cédula de ciudadanía número <input type="text" class="input-inline input-cedula" id="cedula_ciudadania" name="cedula_ciudadania" placeholder="Número de Cédula"> expedida en <input type="text" class="input-inline input-expedida" id="cedula_expedida" name="cedula_expedida" placeholder="Lugar de Expedición">, funcionario de carrera del Hospital Universitario del Valle “Evaristo García” E.S.E. y titular del empleo (<input type="text" class="input-inline input-empleo" id="empleo_autorizacion" name="empleo_autorizacion" placeholder="Denominación, Código y Grado">):</p>
+                                        <p>Autorizo al Hospital Universitario del Valle “Evaristo García” E.S.E., para que a partir de la fecha se sirva descontar el 1,0% de mi asignación básica mensual, destinada exclusivamente como aporte sindical, en favor del Sindicato de Empleados Públicos del Hospital Universitario del Valle “Evaristo García” SINEPUB HUV, identificada con NIT 909.434.349-6, durante el tiempo que permanezca como afiliado(a) a la organización.</p>
+                                    </fieldset>
+                            
+                                    <div class="firma-y-huella">  <!-- Contenedor para Firma y Huella -->
+                                        <div class="firma-afiliado">
+                                            <label for="firma_afiliado">Firma Afiliado(a):</label>
+                                            <div class="area-firma"></div> <!-- Área para la firma (simulado con un div) -->
+                                        </div>
+                                        <div class="huella-indice-derecho">
+                                            <label for="huella_indice">Huella Índice Derecho:</label>
+                                            <div class="area-huella"></div> <!-- Área para la huella (simulado con un div) -->
+                                        </div>
+                                    </div>
+                            
+                                    <p class="disclaimer-afiliacion">El Sindicato de Empleados Públicos del Hospital Universitario del Valle "Evaristo García" SINEPUB HUV, registro No 1525 del 30 de Octubre de 2020, conforme a su autonomía sindical, se reserva el derecho de admisión y permanencia en la organización, considerando la verificación del cumplimiento de todos los requisitos del afiliado, establecidos en sus Estatutos. Los datos personales que se suministran en el presente formato y en los documentos anexos al mismo, serán tratados mediante el buen uso y mantenimiento de medidas de seguridad técnicas, físicas y administrativas y su confidencialidad será garantizada, de conformidad con lo definido en la Ley 1581 de 2012, el Decreto reglamentario 1377 de 2013 y las demás normas que las modifiquen o sustituyan.</p>
+                                    <p class="anexar-documento">Anexar copia legible del documento de identidad</p>
+                                    <p class="fecha-formulario">1 2020</p>
+                                    <div class="contacto-formulario">
+                                        <p>Calle 5#36-08, Oficina 7 B/ San Fernando, Ext: 1835, TELÉFONOS: 3163218579</p>
+                                        <p>Email: sinepubhuv@gmail.com</p>
+                                    </div>
+                            
+                                    <button type="submit" class="boton-enviar-afiliacion">Enviar Formulario de Afiliación</button> <!-- Botón de envío -->
+                            
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots"> <!-- NUEVO DIV para los circulitos -->
+                    <!-- Los circulitos se generarán aquí con JavaScript -->
+                </div>
+                <button class="prev-slide">&#10094;</button>
+                <button class="next-slide">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 SINEPUB. Todos los derechos reservados.</p>
+                <div class="footer-logos">
+                    <img src="images/propais.png" alt="Logo Propais">
+                    <img src="images/fedetradh.png" alt="Logo Fedetradh">
+                </div>
+                <div class="contacto">
+                    <div class="informacion-y-mapa">
+                        <div class="informacion">
+                            <h1 class="titulo-contacto">Contacto</h1>
+                            <p>¿Tienes dudas o necesitas más información? Contáctanos a traves de nuestros medios digitales:</p>
+                            <ul>
+                                <li>Email: sinepubunionsindical@gmail.com</li>
+                                <li>Dirección: Cl. 5 #36 - 00. Cali, Valle del Cauca</li>
+                            </ul>
+                            <div class="footer-redes-sociales">
+                                <a href="https://www.facebook.com/people/Sindicato-de-Empleados-P%25C3%25BAblicos-Sinepub-HUV/100064330442393/" target="_blank">
+                                    <img src="images/icono.facebook.jpg" alt="Facebook">
+                                </a>
+                                <a href="https://web.whatsapp.com/send/?phone=%2B573163218579&context=ARA_Q_pzjXz8Xc1JNzpw6upSuHE9w825NQlneatdpHwu0FO26cq6ivICcbMORKR3pT_4HzmNl_Aky2IRu_neaai7HKXVwhT1CacJzpFOFANuNKjQwbhTfwQdfhk1G2rnGTY71RB49Bl3Z1bkuaivHvfxoQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawH62IxleHRuA2FlbQIxMAABHaz7Q3eybwVxMxtEi601LIJaVaPH6ttX5OI1SOxoXrV8GD8D5at1P_aksg_aem_fRKBzcZnA3IH1JogroXN_g" target="_blank">
+                                    <img src="images/icono.whatsapp.png" alt="WhatsApp">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mapa">
+                            <div class="mapa-titulo">
+                                <h1 class="titulo-como-llegar">Cómo llegar</h1>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.755111111111!2d-76.5473703!3d3.4306492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a69c440a28bb%3A0xca12ae041f48a3b8!2sCl.+5+%2336%2C+El+Sindicato%2C+Cali%2C+Valle+del+Cauca!5e0!3m2!1ses-419!2sco!4v1667243455555!5m2!1ses-419!2sco" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>            
+        
+        <!-- Botón flotante con restricción de acceso -->
+        <div id="boton-flotante">
+            <button id="chatbot-button">🗣️ Habla con SINEPUB.IA (Solo Afiliados)</button>
+        </div>
+        <!-- Agregar el botón flotante -->
+        <div id="chatbot-container" style="display: none;">
+            <elevenlabs-convai agent-id="a4xeAlFI8Oq0oVnTvUps"></elevenlabs-convai>
+            <script src="https://elevenlabs.io/convai-widget/index.js" type="text/javascript"></script>
+        </div>
+        <script src="chatbot-access.js" defer></script>
+        <script src="slider.js" defer></script>
+        <script src="afiliacion.js" defer></script>
+    </body>
+    </html>
